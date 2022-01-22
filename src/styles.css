@@ -1,0 +1,21 @@
+input[type="radio"]:checked {
+  visibility: hidden;
+  width: 0;
+}
+input[type="radio"] {
+  visibility: hidden;
+  width: 0;
+}
+
+input[type="radio"] + label {
+  font-weight: normal;
+  color: gray;
+}
+input[type="radio"]:checked + label {
+  font-weight: bold;
+  color: white;
+}
+
+label {
+  cursor: pointer;
+}

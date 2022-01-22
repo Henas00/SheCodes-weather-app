@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link  rel="stylesheet" href="/src/styles.css"></script>
+    <script
+      src="https://kit.fontawesome.com/1ceb7955ba.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div
+      class="container rounded-3 shadow-sm"
+      style="background-color: #f5f5f5;"
+    >
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col d-flex flex-column justify-content-start">
+            <form class="search-form input-group mb-3">
+              <input
+                id="search-input"
+                class="form-control rounded-left mt-4 mb-5"
+                type="text"
+                placeholder="Enter the city"
+              />
+              <button class="btn btn-outline-secondary rounded-right mt-4 mb-5">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+
+            <div>
+              <p>Today</p>
+              <h1 id="city"></h1>
+              <p id="date"></p>
+            </div>
+          </div>
+          <div class="col text-center mt-4">
+            <div
+              class="me-md-2 text-white shadow-sm p-3"
+              style="
+                width: 250px;
+                height: 250px;
+                border-radius: 50%;
+                background-color: #01579b;
+              "
+            >
+              <i class="fas fa-sun fs-1"></i>
+              <div>
+                <span class="currentTemp font-weight-bolder fs-1 " id="currentTemp">
+
+              </span>
+              <sup>°C</sup> </div>
+              <p>Wind: 16 km/h</p>
+              <p>Precipitation : 30%</p>
+              <div>
+                <form class="conver-form">
+                  <input  type="radio" value="celsius" name="temp" id="celsius" checked/>
+                  <label  for="celsius">°C</label></span>
+              
+                  <input type="radio" value="fahrenheit" name="temp" id="fahrenheit" />
+                  <label for="fahrenheit">°F</label></span>
+                </form>
+              </div>
+
+
+              
+      
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="mb-4 mt-3">Next 5 Days</h4>
+        <div class="row text-center">
+          <div class="col">
+            Friday
+            <h1>15℃</h1>
+            <p><i class="fas fa-wind"></i>16 km/h</p>
+            <p><i class="fas fa-cloud-rain"></i>30%</p>
+          </div>
+          <div class="col border-start">
+            Saturday
+            <h1>10℃</h1>
+            <p><i class="fas fa-wind"></i>16 km/h</p>
+            <p><i class="fas fa-cloud-rain"></i>30%</p>
+          </div>
+          <div class="col border-start">
+            sunday
+            <h1>13℃</h1>
+            <p><i class="fas fa-wind"></i>16 km/h</p>
+            <p><i class="fas fa-cloud-rain"></i>30%</p>
+          </div>
+          <div class="col border-start">
+            monday
+            <h1>8℃</h1>
+            <p><i class="fas fa-wind"></i>16 km/h</p>
+            <p><i class="fas fa-cloud-rain"></i>30%</p>
+          </div>
+          <div class="col border-start">
+            Teusday
+            <h1>7℃</h1>
+            <p><i class="fas fa-wind"></i>16 km/h</p>
+            <p><i class="fas fa-cloud-rain"></i>30%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/src/index.js"></script>
+  </body>
+</html>
