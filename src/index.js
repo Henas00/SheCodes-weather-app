@@ -55,6 +55,17 @@ const forecast = document.querySelector("#forecast");
 const urlCurrentWeather = "https://api.openweathermap.org/data/2.5/weather";
 const urlForecast = "https://api.openweathermap.org/data/2.5/onecall";
 
+
+getData(
+  urlCurrentWeather ,
+  (params = {
+    q: "new york",
+    units: "metric",
+    appid: apiKey,
+  })
+);
+getForecast(coords = { lat: 40.71, lon: 74.0 });
+
 navigator.geolocation.getCurrentPosition(getWeather);
 let coord;
 function getData(url, params) {
