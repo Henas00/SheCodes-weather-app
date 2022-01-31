@@ -43,6 +43,7 @@ let apiKey = "7cb230c11cc7bb7b904f70eb8d9739c7";
 const btn = document.querySelector(".butt");
 const temp = document.querySelector("#currentTemp");
 const radios = document.querySelectorAll('input[name="temp"]');
+const celsius = document.querySelector("#celsius");
 const input = document.querySelector(".search-input");
 const showCity = document.querySelector("#city");
 const img = document.querySelector(".icon");
@@ -56,25 +57,20 @@ const urlCurrentWeather = "https://api.openweathermap.org/data/2.5/weather";
 const urlForecast = "https://api.openweathermap.org/data/2.5/onecall";
 
 
-getData(
-  urlCurrentWeather ,
-  (params = {
-    q: "new york",
-    units: "metric",
-    appid: apiKey,
-  })
-);
+
 getForecast(coords = { lat: 40.71, lon: 74.0 });
 
 navigator.geolocation.getCurrentPosition(getWeather);
 let coord;
 function getData(url, params) {
+  celsius.checked = true;
   axios
     .get(url, {
       params,
     })
     .then((response) => {
       const { main, name, weather, wind, coord } = response.data;
+      
       temp.textContent = Math.round(main.temp);
       humidity.textContent = main.humidity;
       windSpeed.textContent = wind.speed;
@@ -88,6 +84,15 @@ function getData(url, params) {
       getForecast(coord);
     });
 }
+
+getData(
+  urlCurrentWeather,
+  (params = {
+    q: "new york",
+    units: "metric",
+    appid: apiKey,
+  })
+);
 
 function getForecast(coords) {
   const params = {
